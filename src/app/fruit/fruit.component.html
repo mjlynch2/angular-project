@@ -1,0 +1,15 @@
+<h2>{{fruit.name | uppercase}} Details</h2>
+<div><span>id: </span>{{fruit.id}}</div>
+<div><span>name: </span>{{fruit.name}}</div>
+<div>
+    <label>name:
+        <input [(ngModel)]="fruit.name" placeholder="name" />
+    </label>
+</div>
+
+<h2>All Fruits</h2>
+<ul class="fruits">
+    <li *ngFor="let fruit of fruits">
+        <span class="badge">{{fruit.id}}</span> {{fruit.name}}
+    </li>
+</ul>
