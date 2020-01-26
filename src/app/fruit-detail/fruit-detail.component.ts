@@ -28,4 +28,8 @@ export class FruitDetailComponent implements OnInit {
     this.fruitService.getFruit(id)
       .subscribe(fruit => this.fruit = fruit);
   }
+
+  goBack(): void {
+    this.location.back();
+  }
 }
