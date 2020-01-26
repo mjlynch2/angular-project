@@ -1,12 +1,9 @@
 <div class="mat-display-1">All Fruits</div>
 <ul class="fruit">
-  <li
-    *ngFor="let fruit of fruits"
-    [class.selected]="fruit === selectedFruit"
-    (click)="onSelect(fruit)"
-  >
-    <span class="badge">{{ fruit.id }}</span> {{ fruit.name }}
+  <li *ngFor="let fruit of fruits">
+    <a routerLink="/detail/{{fruit.id}}">
+      <span class="badge">{{ fruit.id }}</span> {{ fruit.name }}
+    </a>
   </li>
 </ul>
-
 <app-fruit-detail [fruit]="selectedFruit"></app-fruit-detail>

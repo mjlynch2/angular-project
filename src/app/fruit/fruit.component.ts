@@ -9,19 +9,12 @@ import { FruitService } from '../fruit.service';
   styleUrls: ['./fruit.component.css']
 })
 export class FruitComponent implements OnInit {
-
   fruits: Fruit[];
-
-  selectedFruit: Fruit;
 
   constructor(private fruitService: FruitService) { }
 
   ngOnInit() {
     this.getFruits();
-  }
-
-  onSelect(fruit: Fruit): void {
-    this.selectedFruit = fruit;
   }
 
   getFruits(): void {
