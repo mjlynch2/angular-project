@@ -35,15 +35,18 @@ export class FruitService {
   }
 
   getFruits(): Observable<Fruit[]> {
-    this.messageService.add("FruitService: fetched fruits");
     return this.http.get<Fruit[]>(this.fruitsUrl)
       .pipe(
-        tap(_ => this.log('fetched heroes')),
+        tap(_ => this.log('fetched fruits')),
         catchError(this.handleError<Fruit[]>("getFrtuis", [])));
   }
 
   getFruit(id: number): Observable<Fruit> {
-    this.messageService.add(`FruitService: fetched fruit id=${id}`);
-    return of(FRUITS.find(fruit => fruit.id === id));
+    const url = `${this.fruitsUrl}/${id}`;
+    return this.http.get<Fruit>(url)
+      .pipe(
+        tap(_ => this.log(`fetched fruit id=${id}`)),
+        catchError(this.handleError<Fruit>(`getHero id=${id}`))
+      );
   }
 }
