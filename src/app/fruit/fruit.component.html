@@ -1,9 +1,10 @@
 <div class="mat-display-1">All Fruits</div>
-<ul class="fruit">
-  <li *ngFor="let fruit of fruits">
-    <a routerLink="/detail/{{fruit.id}}">
-      <span class="badge">{{ fruit.id }}</span> {{ fruit.name }}
-    </a>
-  </li>
-</ul>
+<mat-nav-list class="fruit">
+  <a mat-list-item 
+  routerLink="/detail/{{fruit.id}}"
+  *ngFor="let fruit of fruits"
+  >
+    {{fruit.name}}
+  </a>
+</mat-nav-list>
 <app-fruit-detail [fruit]="selectedFruit"></app-fruit-detail>

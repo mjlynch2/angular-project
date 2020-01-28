@@ -1,8 +1,18 @@
-<h3>Current Basket</h3>
+<!-- <h3>Current Basket</h3>
 <div class="grid grid-pad">
   <a *ngFor="let fruit of fruits" class="col-1-4" routerLink="/detail/{{fruit.id}}">
     <div class="module fruit">
       <h4>{{fruit.name}}</h4>
     </div>
   </a>
+</div> -->
+
+<div class="dashboard">
+  <mat-card class="dashboard-item" *ngFor="let fruit of fruits">
+    <mat-card-header>
+      <a routerLink="/detail/{{ fruit.id }}">
+        <mat-card-title>{{ fruit.name }}</mat-card-title>
+      </a>
+    </mat-card-header>
+  </mat-card>
 </div>

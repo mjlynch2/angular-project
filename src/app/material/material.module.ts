@@ -6,6 +6,10 @@ import {
   MatIconModule,
   MatFormFieldModule,
   MatToolbarModule,
+  MatCardModule,
+  MatListModule,
+  MatGridListModule,
+
 } from '@angular/material';
 
 
@@ -16,7 +20,9 @@ const MaterialComponents = [
   MatFormFieldModule,
   MatIconModule,
   MatToolbarModule,
-  
+  MatCardModule,
+  MatListModule,
+  MatGridListModule,
 ]
 @NgModule({
   exports: [MaterialComponents],
